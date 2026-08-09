@@ -1,106 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KBF | Keystone Basketball Federation</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#050a12;color:#f5f7fb}
-    a{text-decoration:none;color:inherit}
-    .nav{height:72px;background:#07111f;border-bottom:1px solid #18304c;display:flex;align-items:center;justify-content:space-between;padding:0 7%;position:sticky;top:0;z-index:10}
-    .brand{font-weight:900;letter-spacing:2px;font-size:24px}.brand span{color:#328cff}
-    .links{display:flex;gap:28px;font-size:14px;font-weight:700;color:#b8c5d6}
-    .links a:hover{color:#fff}
-    .hero{min-height:620px;display:flex;align-items:center;padding:80px 7%;background:radial-gradient(circle at 75% 35%,#12345b 0,#07111f 35%,#050a12 70%)}
-    .hero-inner{max-width:760px}
-    .eyebrow{color:#328cff;font-weight:800;letter-spacing:3px;font-size:13px;margin-bottom:18px}
-    h1{font-size:clamp(48px,8vw,92px);line-height:.92;margin-bottom:24px}
-    h1 span{color:#328cff}
-    .hero p{max-width:620px;color:#aebbd0;font-size:18px;line-height:1.65;margin-bottom:34px}
-    .buttons{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{padding:15px 24px;border-radius:8px;font-weight:800;background:#328cff}.btn.secondary{background:#101d2e;border:1px solid #284563}
-    section{padding:80px 7%}.section-title{font-size:36px;margin-bottom:10px}.section-sub{color:#8fa1b8;margin-bottom:34px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#0a1422;border:1px solid #19304b;border-radius:14px;padding:28px}
-    .card h3{margin-bottom:10px}.card p{color:#8fa1b8;line-height:1.6}
-    .statbar{display:grid;grid-template-columns:repeat(4,1fr);background:#081321;border-top:1px solid #19304b;border-bottom:1px solid #19304b}
-    .stat{padding:30px;text-align:center}.stat strong{font-size:32px}.stat small{display:block;color:#8092aa;margin-top:5px}
-    .cta{background:linear-gradient(100deg,#0b1d34,#0a1422);text-align:center;border:1px solid #19304b;border-radius:18px;padding:55px}
-    footer{padding:35px 7%;border-top:1px solid #19304b;color:#71839a;font-size:13px;display:flex;justify-content:space-between}
-    @media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr}.statbar{grid-template-columns:repeat(2,1fr)}section{padding:60px 6%}.hero{padding:70px 6%}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KBF | Keystone Basketball Federation</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#f5f5f5}
+a{text-decoration:none;color:inherit}
+.nav{height:78px;background:#080808;border-bottom:1px solid #2a0a0a;display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px;font-size:22px}
+.brand img{width:45px;height:45px;object-fit:contain}
+.brand span{color:#e50914}
+.links{display:flex;gap:28px;font-size:13px;font-weight:800;color:#c9c9c9}
+.links a:hover{color:#e50914}
+.hero{min-height:700px;display:flex;align-items:center;padding:80px 7%;position:relative;overflow:hidden;background:radial-gradient(circle at 72% 42%,rgba(229,9,20,.24),transparent 32%),linear-gradient(135deg,#030303,#0b0b0b 55%,#160304)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.25));pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:700px}
+.eyebrow{color:#e50914;font-weight:900;letter-spacing:4px;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(48px,8vw,90px);line-height:.9;margin-bottom:24px;text-transform:uppercase}
+h1 span{color:#e50914}
+.hero p{max-width:620px;color:#bdbdbd;font-size:18px;line-height:1.65;margin-bottom:34px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 25px;border-radius:6px;font-weight:900;background:#d90812;border:1px solid #ff3038;box-shadow:0 0 25px rgba(217,8,18,.22)}
+.btn.secondary{background:#111;border:1px solid #444;box-shadow:none}
+.statbar{display:grid;grid-template-columns:repeat(4,1fr);background:#0a0a0a;border-top:1px solid #321010;border-bottom:1px solid #321010}
+.stat{padding:30px;text-align:center}.stat strong{font-size:31px}.stat small{display:block;color:#8e8e8e;margin-top:6px;letter-spacing:1px}
+section{padding:82px 7%}.section-title{font-size:36px;font-weight:900;text-transform:uppercase}.section-title:after{content:"";display:block;width:55px;height:4px;background:#e50914;margin-top:12px}.section-sub{color:#909090;margin:15px 0 34px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#111,#090909);border:1px solid #2b2b2b;border-top:2px solid #8d0b11;border-radius:10px;padding:28px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#e50914}.card h3{margin-bottom:10px}.card p{color:#999;line-height:1.6}
+.cta{background:linear-gradient(100deg,#180304,#0c0c0c);text-align:center;border:1px solid #4a1013;border-radius:14px;padding:58px;box-shadow:0 0 45px rgba(229,9,20,.08)}
+.cta h2{font-size:38px}.cta p{color:#999;margin:14px auto 25px;max-width:600px}
+footer{padding:35px 7%;border-top:1px solid #2b1010;color:#707070;font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr}.statbar{grid-template-columns:repeat(2,1fr)}section{padding:60px 6%}.hero{padding:70px 6%;min-height:650px}.brand img{width:40px;height:40px}}
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="brand">KBF<span>.</span></div>
-    <div class="links">
-      <a href="#home">HOME</a><a href="#league">LEAGUE</a><a href="#teams">TEAMS</a><a href="#rules">RULES</a><a href="#register">REGISTER</a>
-    </div>
-  </nav>
+<nav class="nav">
+  <a class="brand" href="#home"><img src="kbf-logo.png" alt="KBF Logo"><span>KBF</span></a>
+  <div class="links">
+    <a href="#home">HOME</a><a href="#league">LEAGUE</a><a href="#teams">TEAMS</a><a href="#rules">RULES</a><a href="#register">REGISTER</a>
+  </div>
+</nav>
 
-  <main id="home">
-    <div class="hero">
-      <div class="hero-inner">
-        <div class="eyebrow">KEYSTONE BASKETBALL FEDERATION</div>
-        <h1>BUILT FOR <span>COMPETITION.</span></h1>
-        <p>KBF is a professional NBA 2K competitive league built around organized competition, league play, player opportunities and a community that takes the game seriously.</p>
-        <div class="buttons">
-          <a class="btn" href="#register">JOIN THE LEAGUE</a>
-          <a class="btn secondary" href="#league">LEARN MORE</a>
-        </div>
-      </div>
-    </div>
+<main id="home">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">KEYSTONE BASKETBALL FEDERATION</div>
+    <h1>BUILT FOR <span>COMPETITION.</span></h1>
+    <p>KBF is a professional NBA 2K competitive league built around organized competition, league play, player opportunities and a community that takes the game seriously.</p>
+    <div class="buttons"><a class="btn" href="#register">JOIN THE LEAGUE</a><a class="btn secondary" href="#league">LEARN MORE</a></div>
+  </div>
+</section>
 
-    <div class="statbar">
-      <div class="stat"><strong>2K</strong><small>COMPETITIVE PLAY</small></div>
-      <div class="stat"><strong>KBF</strong><small>LEAGUE BRAND</small></div>
-      <div class="stat"><strong>24/7</strong><small>COMMUNITY</small></div>
-      <div class="stat"><strong>∞</strong><small>OPPORTUNITIES</small></div>
-    </div>
+<div class="statbar">
+<div class="stat"><strong>2K</strong><small>COMPETITIVE PLAY</small></div>
+<div class="stat"><strong>KBF</strong><small>LEAGUE BRAND</small></div>
+<div class="stat"><strong>24/7</strong><small>COMMUNITY</small></div>
+<div class="stat"><strong>∞</strong><small>OPPORTUNITIES</small></div>
+</div>
 
-    <section id="league">
-      <div class="section-title">THE LEAGUE</div>
-      <div class="section-sub">A competitive home for players, teams and league talent.</div>
-      <div class="grid">
-        <div class="card"><h3>Draft League</h3><p>Players compete through organized games, evaluations and league events for opportunities to be selected by teams.</p></div>
-        <div class="card"><h3>Competitive Events</h3><p>Stay active through scheduled league games, special events and competitive runs throughout the season.</p></div>
-        <div class="card"><h3>Player Development</h3><p>Build your reputation, compete against strong players and establish yourself inside the KBF community.</p></div>
-      </div>
-    </section>
+<section id="league">
+<div class="section-title">THE LEAGUE</div><div class="section-sub">A competitive home for players, teams and league talent.</div>
+<div class="grid">
+<div class="card"><h3>Draft League</h3><p>Players compete through organized games, evaluations and league events for opportunities to be selected by teams.</p></div>
+<div class="card"><h3>Competitive Events</h3><p>Stay active through scheduled league games, special events and competitive runs throughout the season.</p></div>
+<div class="card"><h3>Player Development</h3><p>Build your reputation, compete against strong players and establish yourself inside the KBF community.</p></div>
+</div>
+</section>
 
-    <section id="teams">
-      <div class="section-title">TEAMS & ROSTERS</div>
-      <div class="section-sub">Organized teams. Serious competition. One federation.</div>
-      <div class="grid">
-        <div class="card"><h3>Team Registration</h3><p>Teams can register for league competition and manage their roster through the official KBF community.</p></div>
-        <div class="card"><h3>Player Rankings</h3><p>League performance and evaluations can be used to establish player rankings and tiers.</p></div>
-        <div class="card"><h3>Matchups</h3><p>Follow scheduled matchups and compete for your team's place in the league standings.</p></div>
-      </div>
-    </section>
+<section id="teams">
+<div class="section-title">TEAMS & ROSTERS</div><div class="section-sub">Organized teams. Serious competition. One federation.</div>
+<div class="grid">
+<div class="card"><h3>Team Registration</h3><p>Teams can register for league competition and manage their roster through the official KBF community.</p></div>
+<div class="card"><h3>Player Rankings</h3><p>League performance and evaluations can be used to establish player rankings and tiers.</p></div>
+<div class="card"><h3>Matchups</h3><p>Follow scheduled matchups and compete for your team's place in the league standings.</p></div>
+</div>
+</section>
 
-    <section id="rules">
-      <div class="section-title">COMPETITION</div>
-      <div class="section-sub">Professional structure starts with clear standards.</div>
-      <div class="grid">
-        <div class="card"><h3>League Rules</h3><p>All participants are expected to follow the official KBF rules and competitive standards.</p></div>
-        <div class="card"><h3>Fair Play</h3><p>Respect opponents, league staff and the integrity of every scheduled matchup.</p></div>
-        <div class="card"><h3>Stay Locked In</h3><p>Keep up with announcements, schedules, roster updates and league deadlines through KBF.</p></div>
-      </div>
-    </section>
+<section id="rules">
+<div class="section-title">COMPETITION</div><div class="section-sub">Professional structure starts with clear standards.</div>
+<div class="grid">
+<div class="card"><h3>League Rules</h3><p>All participants are expected to follow the official KBF rules and competitive standards.</p></div>
+<div class="card"><h3>Fair Play</h3><p>Respect opponents, league staff and the integrity of every scheduled matchup.</p></div>
+<div class="card"><h3>Stay Locked In</h3><p>Keep up with announcements, schedules, roster updates and league deadlines through KBF.</p></div>
+</div>
+</section>
 
-    <section id="register">
-      <div class="cta">
-        <h2>READY TO COMPETE?</h2>
-        <p style="color:#9aabc0;margin:14px auto 25px;max-width:600px">Join the KBF community and get involved with the next league cycle.</p>
-        <a class="btn" href="#">REGISTER / JOIN DISCORD</a>
-      </div>
-    </section>
-  </main>
+<section id="register"><div class="cta"><h2>READY TO COMPETE?</h2><p>Join the KBF community and get involved with the next league cycle.</p><a class="btn" href="#">REGISTER / JOIN DISCORD</a></div></section>
+</main>
 
-  <footer>
-    <span>© 2026 Keystone Basketball Federation</span>
-    <span>KBF • NBA 2K COMPETITION</span>
-  </footer>
+<footer><span>© 2026 Keystone Basketball Federation</span><span>KBF • NBA 2K COMPETITION</span></footer>
 </body>
 </html>
