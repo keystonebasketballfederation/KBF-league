@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>KBF | Keystone Basketball Federation</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -18,10 +16,7 @@ color:#f5f5f5;
 line-height:1.55
 }
 
-a{
-text-decoration:none;
-color:inherit
-}
+a{text-decoration:none;color:inherit}
 
 .nav{
 min-height:78px;
@@ -51,9 +46,7 @@ height:45px;
 object-fit:contain
 }
 
-.brand span{
-color:#e50914
-}
+.brand span{color:#e50914}
 
 .links{
 display:flex;
@@ -65,9 +58,7 @@ flex-wrap:wrap;
 justify-content:flex-end
 }
 
-.links a:hover{
-color:#e50914
-}
+.links a:hover{color:#e50914}
 
 .hero{
 min-height:650px;
@@ -110,9 +101,7 @@ margin-bottom:24px;
 text-transform:uppercase
 }
 
-h1 span{
-color:#e50914
-}
+h1 span{color:#e50914}
 
 .hero p{
 max-width:680px;
@@ -157,9 +146,7 @@ padding:28px;
 text-align:center
 }
 
-.stat strong{
-font-size:31px
-}
+.stat strong{font-size:31px}
 
 .stat small{
 display:block;
@@ -168,9 +155,7 @@ margin-top:6px;
 letter-spacing:1px
 }
 
-section{
-padding:75px 7%
-}
+section{padding:75px 7%}
 
 .section-title{
 font-size:36px;
@@ -254,14 +239,12 @@ border-radius:12px;
 overflow:hidden
 }
 
-.table-wrap{
-overflow-x:auto
-}
+.table-wrap{overflow-x:auto}
 
 table{
 width:100%;
 border-collapse:collapse;
-min-width:620px
+min-width:700px
 }
 
 th,td{
@@ -277,9 +260,7 @@ font-size:12px;
 letter-spacing:1px
 }
 
-td{
-color:#d0d0d0
-}
+td{color:#d0d0d0}
 
 .badge{
 display:inline-block;
@@ -329,9 +310,7 @@ border-radius:14px;
 padding:58px
 }
 
-.cta h2{
-font-size:38px
-}
+.cta h2{font-size:38px}
 
 .cta p{
 color:#999;
@@ -353,9 +332,7 @@ display:block;
 margin-bottom:4px
 }
 
-.muted{
-color:#888
-}
+.muted{color:#888}
 
 .awards{
 display:grid;
@@ -370,9 +347,7 @@ border-radius:10px;
 padding:20px
 }
 
-.award h3{
-font-size:15px
-}
+.award h3{font-size:15px}
 
 .award p{
 color:#888;
@@ -418,13 +393,53 @@ gap:20px;
 flex-wrap:wrap
 }
 
-.discord-box h3{
-font-size:22px
-}
+.discord-box h3{font-size:22px}
 
 .discord-box p{
 color:#999;
 margin-top:5px
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
+}
+
+.team-card{
+background:linear-gradient(145deg,#111,#090909);
+border:1px solid #2b2b2b;
+border-top:3px solid #8d0b11;
+border-radius:10px;
+padding:22px
+}
+
+.team-number{
+color:#e50914;
+font-size:12px;
+font-weight:900;
+letter-spacing:2px;
+margin-bottom:8px
+}
+
+.team-card h3{
+font-size:20px;
+margin-bottom:10px
+}
+
+.team-card p{
+color:#888;
+font-size:13px
+}
+
+.team-card .record{
+margin-top:15px;
+padding-top:12px;
+border-top:1px solid #242424;
+display:flex;
+justify-content:space-between;
+color:#aaa;
+font-size:12px
 }
 
 footer{
@@ -438,31 +453,27 @@ gap:15px;
 flex-wrap:wrap
 }
 
+@media(max-width:1000px){
+
+.team-grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+}
+
 @media(max-width:900px){
 
-.links{
-display:none
-}
+.links{display:none}
 
-.grid{
-grid-template-columns:1fr
-}
+.grid{grid-template-columns:1fr}
 
-.awards{
-grid-template-columns:repeat(2,1fr)
-}
+.awards{grid-template-columns:repeat(2,1fr)}
 
-.format-grid{
-grid-template-columns:repeat(2,1fr)
-}
+.format-grid{grid-template-columns:repeat(2,1fr)}
 
-.statbar{
-grid-template-columns:repeat(2,1fr)
-}
+.statbar{grid-template-columns:repeat(2,1fr)}
 
-section{
-padding:60px 6%
-}
+section{padding:60px 6%}
 
 .hero{
 padding:70px 6%;
@@ -474,21 +485,15 @@ width:40px;
 height:40px
 }
 
-.bracket{
-grid-template-columns:1fr
-}
+.bracket{grid-template-columns:1fr}
 
 }
 
 @media(max-width:520px){
 
-h1{
-font-size:48px
-}
+h1{font-size:48px}
 
-.hero p{
-font-size:16px
-}
+.hero p{font-size:16px}
 
 .buttons .btn{
 width:100%;
@@ -500,6 +505,10 @@ grid-template-columns:1fr
 }
 
 .format-grid{
+grid-template-columns:1fr
+}
+
+.team-grid{
 grid-template-columns:1fr
 }
 
@@ -517,10 +526,6 @@ padding:22px
 
 <body>
 
-<!-- =====================================================
-     KBF EASY UPDATE CENTER
-===================================================== -->
-
 <script>
 
 const KBF_DATA = {
@@ -530,7 +535,6 @@ season:"Season 1",
 leagueStatus:"Season Setup",
 
 lastUpdate:"Update this date when you make a major league update.",
-
 
 updates:[
 
@@ -547,41 +551,177 @@ text:"Check official KBF announcements for roster news, schedules and game-time 
 ],
 
 
-standings:[
+/* =====================================================
+   ALL 16 KBF TEAMS
+   CHANGE THE TEAM NAME WHEN THE SEASON STARTS.
+===================================================== */
+
+teams:[
 
 {
-team:"TBD",
-w:"0",
-l:"0",
-pct:"—",
+number:1,
+name:"Team 01",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
 streak:"—"
 },
 
 {
-team:"TBD",
-w:"0",
-l:"0",
-pct:"—",
+number:2,
+name:"Team 02",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
 streak:"—"
 },
 
 {
-team:"TBD",
-w:"0",
-l:"0",
-pct:"—",
+number:3,
+name:"Team 03",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
 streak:"—"
 },
 
 {
-team:"TBD",
-w:"0",
-l:"0",
-pct:"—",
+number:4,
+name:"Team 04",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:5,
+name:"Team 05",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:6,
+name:"Team 06",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:7,
+name:"Team 07",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:8,
+name:"Team 08",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:9,
+name:"Team 09",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:10,
+name:"Team 10",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:11,
+name:"Team 11",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:12,
+name:"Team 12",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:13,
+name:"Team 13",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:14,
+name:"Team 14",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:15,
+name:"Team 15",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
+streak:"—"
+},
+
+{
+number:16,
+name:"Team 16",
+gm:"TBD",
+w:0,
+l:0,
+pct:"0%",
 streak:"—"
 }
 
 ],
+
+
+standings:[],
 
 
 players:[
@@ -738,8 +878,6 @@ winner:"TBD"
 </script>
 
 
-<!-- NAVIGATION -->
-
 <nav class="nav">
 
 <a class="brand" href="#home">
@@ -755,6 +893,8 @@ winner:"TBD"
 <a href="#updates">UPDATE CENTER</a>
 
 <a href="#format">LEAGUE FORMAT</a>
+
+<a href="#teams">TEAMS</a>
 
 <a href="#standings">STANDINGS</a>
 
@@ -776,10 +916,6 @@ winner:"TBD"
 <main id="home">
 
 
-<!-- =========================
-     UPDATE CENTER
-========================= -->
-
 <section id="updates">
 
 <div class="section-title">
@@ -794,10 +930,6 @@ Official KBF league announcements and news.
 
 </section>
 
-
-<!-- =========================
-     OWNER UPDATE CENTER
-========================= -->
 
 <section id="kbf-admin">
 
@@ -814,21 +946,21 @@ when you manage the KBF website.
 
 </p>
 
-
 <div style="margin-top:22px;display:grid;gap:12px">
 
 
 <div class="notice">
 
-<strong>
-📊 STANDINGS
-</strong>
+<strong>🏀 TEAMS</strong>
 
 <span class="muted">
 
-Edit <b>KBF_DATA → standings</b>.
+Edit <b>KBF_DATA → teams</b>.
 
-Change team name, wins, losses,
+There are now all 16 official KBF team slots.
+
+Change each <b>name</b> when teams are finalized.
+You can also change the GM, wins, losses,
 win percentage and streak.
 
 </span>
@@ -838,16 +970,28 @@ win percentage and streak.
 
 <div class="notice">
 
-<strong>
-🏀 PLAYERS
-</strong>
+<strong>📊 STANDINGS</strong>
+
+<span class="muted">
+
+The standings are generated from the 16 KBF teams.
+Update the team information inside
+<b>KBF_DATA → teams</b>.
+
+</span>
+
+</div>
+
+
+<div class="notice">
+
+<strong>🏀 PLAYERS</strong>
 
 <span class="muted">
 
 Edit <b>KBF_DATA → players</b>.
 
-Change player name, team, PPG,
-RPG and APG.
+Change player name, team, PPG, RPG and APG.
 
 </span>
 
@@ -856,17 +1000,14 @@ RPG and APG.
 
 <div class="notice">
 
-<strong>
-📅 SCHEDULE
-</strong>
+<strong>📅 SCHEDULE</strong>
 
 <span class="muted">
 
 Edit <b>KBF_DATA → schedule</b>.
 
-Add regular-season games,
-evening games, playoff games
-and tournament dates.
+Add regular-season games, evening games,
+playoff games and tournament dates.
 
 </span>
 
@@ -875,16 +1016,13 @@ and tournament dates.
 
 <div class="notice">
 
-<strong>
-🌙 OVERNIGHT TOURNAMENTS
-</strong>
+<strong>🌙 OVERNIGHT TOURNAMENTS</strong>
 
 <span class="muted">
 
 Edit <b>KBF_DATA → tournaments</b>.
 
-Change tournament name, date,
-time and status.
+Change tournament name, date, time and status.
 
 </span>
 
@@ -893,17 +1031,14 @@ time and status.
 
 <div class="notice">
 
-<strong>
-🏆 PLAYOFFS
-</strong>
+<strong>🏆 PLAYOFFS</strong>
 
 <span class="muted">
 
-The playoff bracket is already
-built into the website.
+The top 8 teams qualify for the KBF playoffs.
 
-Update the teams and scores
-when the playoffs begin.
+Update the playoff bracket once the standings
+are finalized.
 
 </span>
 
@@ -912,16 +1047,14 @@ when the playoffs begin.
 
 <div class="notice">
 
-<strong>
-👑 CHAMPIONS HALL
-</strong>
+<strong>👑 CHAMPIONS HALL</strong>
 
 <span class="muted">
 
 Edit <b>KBF_DATA → champions</b>.
 
-Add the champion, runner-up
-and Finals MVP after each season.
+Add the champion, runner-up and Finals MVP
+after each season.
 
 </span>
 
@@ -930,17 +1063,14 @@ and Finals MVP after each season.
 
 <div class="notice">
 
-<strong>
-🥇 AWARDS
-</strong>
+<strong>🥇 AWARDS</strong>
 
 <span class="muted">
 
 Edit <b>KBF_DATA → awards</b>.
 
-Update MVP, DPOY, ROY,
-Sixth Player, Most Improved,
-Finals MVP and other honors.
+Update MVP, DPOY, ROY, Sixth Player,
+Most Improved, Finals MVP and other honors.
 
 </span>
 
@@ -949,16 +1079,14 @@ Finals MVP and other honors.
 
 <div class="notice">
 
-<strong>
-📰 ANNOUNCEMENTS
-</strong>
+<strong>📰 ANNOUNCEMENTS</strong>
 
 <span class="muted">
 
 Edit <b>KBF_DATA → updates</b>.
 
-These announcements appear
-at the top of the public website.
+These announcements appear at the top
+of the public website.
 
 </span>
 
@@ -974,7 +1102,7 @@ at the top of the public website.
 KBF OWNER UPDATE CENTER
 ===============================
 
-STANDINGS   → KBF_DATA.standings
+TEAMS       → KBF_DATA.teams
 
 PLAYERS     → KBF_DATA.players
 
@@ -987,6 +1115,21 @@ CHAMPIONS   → KBF_DATA.champions
 AWARDS      → KBF_DATA.awards
 
 UPDATES     → KBF_DATA.updates
+
+
+LEAGUE FORMAT:
+
+16 TEAMS
+
+16-GAME SEASON
+
+8 PLAYOFF TEAMS
+
+7-ROUND SNAKE DRAFT
+
+1 GM + 7 DRAFTED + 2 FA
+
+90-SECOND DRAFT TIMER
 
 
 AFTER EDITING:
@@ -1007,10 +1150,6 @@ AFTER EDITING:
 
 </section>
 
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
@@ -1039,8 +1178,8 @@ playoffs, player development and championships.
 VIEW LEAGUE FORMAT
 </a>
 
-<a class="btn secondary" href="#league">
-EXPLORE KBF
+<a class="btn secondary" href="https://discord.gg/UYHzN8U2N" target="_blank">
+JOIN KBF DISCORD
 </a>
 
 </div>
@@ -1050,67 +1189,45 @@ EXPLORE KBF
 </section>
 
 
-<!-- STATS -->
-
 <div class="statbar">
 
 <div class="stat">
 
-<strong>
-16
-</strong>
+<strong>16</strong>
 
-<small>
-TEAMS
-</small>
+<small>TEAMS</small>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-16
-</strong>
+<strong>16</strong>
 
-<small>
-GAME SEASON
-</small>
+<small>GAME SEASON</small>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-8
-</strong>
+<strong>8</strong>
 
-<small>
-PLAYOFF TEAMS
-</small>
+<small>PLAYOFF TEAMS</small>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-7
-</strong>
+<strong>90</strong>
 
-<small>
-ROUND SNAKE DRAFT
-</small>
+<small>SECOND DRAFT TIMER</small>
 
 </div>
 
 </div>
 
-
-<!-- =========================
-     LEAGUE FORMAT
-========================= -->
 
 <section id="format">
 
@@ -1128,78 +1245,54 @@ The official structure for the KBF draft league.
 
 <div class="format-card">
 
-<div class="big">
-🏀 16
-</div>
+<div class="big">🏀 16</div>
 
-<div class="label">
-TEAMS
-</div>
+<div class="label">TEAMS</div>
 
 </div>
 
 
 <div class="format-card">
 
-<div class="big">
-📅 16
-</div>
+<div class="big">📅 16</div>
 
-<div class="label">
-GAME SEASON
-</div>
+<div class="label">GAME SEASON</div>
 
 </div>
 
 
 <div class="format-card">
 
-<div class="big">
-🏆 8
-</div>
+<div class="big">🏆 8</div>
 
-<div class="label">
-PLAYOFF TEAMS
-</div>
+<div class="label">PLAYOFF TEAMS</div>
 
 </div>
 
 
 <div class="format-card">
 
-<div class="big">
-🔄 7
-</div>
+<div class="big">🔄 7</div>
 
-<div class="label">
-ROUND SNAKE DRAFT
-</div>
+<div class="label">ROUND SNAKE DRAFT</div>
 
 </div>
 
 
 <div class="format-card">
 
-<div class="big">
-👤 1 + 7 + 2
-</div>
+<div class="big">👤 1 + 7 + 2</div>
 
-<div class="label">
-1 GM + 7 DRAFTED + 2 FA
-</div>
+<div class="label">1 GM + 7 DRAFTED + 2 FA</div>
 
 </div>
 
 
 <div class="format-card">
 
-<div class="big">
-⏱️ 90
-</div>
+<div class="big">⏱️ 90</div>
 
-<div class="label">
-SECOND DRAFT TIMER
-</div>
+<div class="label">SECOND DRAFT TIMER</div>
 
 </div>
 
@@ -1232,12 +1325,7 @@ JOIN DISCORD
 
 </div>
 
-</section>
-
-
-<!-- LEAGUE -->
-
-<section id="league">
+</section><section id="league">
 
 <div class="section-title">
 KBF LEAGUE
@@ -1253,13 +1341,9 @@ A complete competitive structure for KBF players and teams.
 
 <div class="card">
 
-<div class="icon">
-🏀
-</div>
+<div class="icon">🏀</div>
 
-<h3>
-16-Team Draft League
-</h3>
+<h3>16-Team Draft League</h3>
 
 <p>
 Sixteen teams compete throughout the official
@@ -1271,13 +1355,9 @@ KBF season.
 
 <div class="card">
 
-<div class="icon">
-🔄
-</div>
+<div class="icon">🔄</div>
 
-<h3>
-Snake Draft
-</h3>
+<h3>Snake Draft</h3>
 
 <p>
 Teams use a seven-round snake draft
@@ -1289,13 +1369,9 @@ with a 90-second timer per selection.
 
 <div class="card">
 
-<div class="icon">
-👤
-</div>
+<div class="icon">👤</div>
 
-<h3>
-Roster Format
-</h3>
+<h3>Roster Format</h3>
 
 <p>
 Each team consists of 1 GM,
@@ -1307,13 +1383,9 @@ Each team consists of 1 GM,
 
 <div class="card">
 
-<div class="icon">
-📅
-</div>
+<div class="icon">📅</div>
 
-<h3>
-16-Game Season
-</h3>
+<h3>16-Game Season</h3>
 
 <p>
 Every team plays a sixteen-game
@@ -1325,13 +1397,9 @@ regular season.
 
 <div class="card">
 
-<div class="icon">
-🏆
-</div>
+<div class="icon">🏆</div>
 
-<h3>
-8-Team Playoffs
-</h3>
+<h3>8-Team Playoffs</h3>
 
 <p>
 The top eight teams advance
@@ -1343,13 +1411,9 @@ to the KBF playoff bracket.
 
 <div class="card">
 
-<div class="icon">
-🌙
-</div>
+<div class="icon">🌙</div>
 
-<h3>
-Evening & Overnight Events
-</h3>
+<h3>Evening & Overnight Events</h3>
 
 <p>
 Additional competition is available
@@ -1361,7 +1425,31 @@ through evening games and overnight tournaments.
 
 </div>
 
-</section><!-- =========================
+</section>
+
+
+<!-- =========================
+     ALL 16 TEAMS
+========================= -->
+
+<section id="teams">
+
+<div class="section-title">
+KBF TEAMS
+</div>
+
+<div class="section-sub">
+All 16 teams competing in the official KBF draft league.
+</div>
+
+
+<div class="team-grid" id="teamGrid">
+</div>
+
+</section>
+
+
+<!-- =========================
      STANDINGS
 ========================= -->
 
@@ -1384,29 +1472,13 @@ Official KBF standings.
 
 <tr>
 
-<th>
-#
-</th>
-
-<th>
-TEAM
-</th>
-
-<th>
-W
-</th>
-
-<th>
-L
-</th>
-
-<th>
-WIN %
-</th>
-
-<th>
-STREAK
-</th>
+<th>#</th>
+<th>TEAM</th>
+<th>GM</th>
+<th>W</th>
+<th>L</th>
+<th>WIN %</th>
+<th>STREAK</th>
 
 </tr>
 
@@ -1423,7 +1495,9 @@ STREAK
 </section>
 
 
-<!-- PLAYER RANKINGS -->
+<!-- =========================
+     PLAYER RANKINGS
+========================= -->
 
 <section>
 
@@ -1444,29 +1518,12 @@ Track league performance and statistics.
 
 <tr>
 
-<th>
-RANK
-</th>
-
-<th>
-PLAYER
-</th>
-
-<th>
-TEAM
-</th>
-
-<th>
-PPG
-</th>
-
-<th>
-RPG
-</th>
-
-<th>
-APG
-</th>
+<th>RANK</th>
+<th>PLAYER</th>
+<th>TEAM</th>
+<th>PPG</th>
+<th>RPG</th>
+<th>APG</th>
 
 </tr>
 
@@ -1483,7 +1540,9 @@ APG
 </section>
 
 
-<!-- SCHEDULE -->
+<!-- =========================
+     SCHEDULE
+========================= -->
 
 <section id="schedule">
 
@@ -1504,21 +1563,10 @@ Regular season, evening games and events.
 
 <tr>
 
-<th>
-DATE
-</th>
-
-<th>
-TIME
-</th>
-
-<th>
-MATCHUP
-</th>
-
-<th>
-EVENT
-</th>
+<th>DATE</th>
+<th>TIME</th>
+<th>MATCHUP</th>
+<th>EVENT</th>
 
 </tr>
 
@@ -1535,7 +1583,9 @@ EVENT
 </section>
 
 
-<!-- OVERNIGHT TOURNAMENTS -->
+<!-- =========================
+     OVERNIGHT TOURNAMENTS
+========================= -->
 
 <section id="tournaments">
 
@@ -1554,7 +1604,9 @@ Late-night KBF events built for extra competition.
 </section>
 
 
-<!-- PLAYOFFS -->
+<!-- =========================
+     PLAYOFFS
+========================= -->
 
 <section id="playoffs">
 
@@ -1572,33 +1624,19 @@ The top 8 teams advance to the KBF championship bracket.
 
 <div class="round">
 
-<h3>
-Quarterfinals
-</h3>
+<h3>Quarterfinals</h3>
 
 
 <div class="match">
 
 <div>
-<span>
-#1 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#1 TBD</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-#8 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#8 TBD</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1607,25 +1645,13 @@ Quarterfinals
 <div class="match">
 
 <div>
-<span>
-#4 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#4 TBD</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-#5 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#5 TBD</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1635,33 +1661,19 @@ Quarterfinals
 
 <div class="round">
 
-<h3>
-Quarterfinals
-</h3>
+<h3>Quarterfinals</h3>
 
 
 <div class="match">
 
 <div>
-<span>
-#2 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#2 TBD</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-#7 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#7 TBD</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1670,25 +1682,13 @@ Quarterfinals
 <div class="match">
 
 <div>
-<span>
-#3 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#3 TBD</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-#6 TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>#6 TBD</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1698,33 +1698,19 @@ Quarterfinals
 
 <div class="round">
 
-<h3>
-Semifinals
-</h3>
+<h3>Semifinals</h3>
 
 
 <div class="match">
 
 <div>
-<span>
-Winner QF1
-</span>
-
-<b>
-—
-</b>
-
+<span>Winner QF1</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-Winner QF2
-</span>
-
-<b>
-—
-</b>
-
+<span>Winner QF2</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1733,25 +1719,13 @@ Winner QF2
 <div class="match">
 
 <div>
-<span>
-Winner QF3
-</span>
-
-<b>
-—
-</b>
-
+<span>Winner QF3</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-Winner QF4
-</span>
-
-<b>
-—
-</b>
-
+<span>Winner QF4</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1761,33 +1735,19 @@ Winner QF4
 
 <div class="round">
 
-<h3>
-KBF Finals
-</h3>
+<h3>KBF Finals</h3>
 
 
 <div class="match">
 
 <div>
-<span>
-TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>TBD</span>
+<b>—</b>
 </div>
 
 <div>
-<span>
-TBD
-</span>
-
-<b>
-—
-</b>
-
+<span>TBD</span>
+<b>—</b>
 </div>
 
 </div>
@@ -1800,7 +1760,9 @@ TBD
 </section>
 
 
-<!-- AWARDS -->
+<!-- =========================
+     AWARDS
+========================= -->
 
 <section id="awards">
 
@@ -1819,8 +1781,6 @@ KBF season awards and player recognition.
 </section>
 
 
-<!-- WEEKLY AWARDS -->
-
 <section>
 
 <div class="section-title">
@@ -1837,13 +1797,9 @@ Recognition throughout the season.
 
 <div class="card">
 
-<div class="icon">
-🥇
-</div>
+<div class="icon">🥇</div>
 
-<h3>
-Player of the Week
-</h3>
+<h3>Player of the Week</h3>
 
 <p>
 Recognize the best performance
@@ -1855,13 +1811,9 @@ from each week.
 
 <div class="card">
 
-<div class="icon">
-⭐
-</div>
+<div class="icon">⭐</div>
 
-<h3>
-Player of the Month
-</h3>
+<h3>Player of the Month</h3>
 
 <p>
 Highlight the player who made
@@ -1873,13 +1825,9 @@ the biggest impact.
 
 <div class="card">
 
-<div class="icon">
-🏅
-</div>
+<div class="icon">🏅</div>
 
-<h3>
-All-KBF Teams
-</h3>
+<h3>All-KBF Teams</h3>
 
 <p>
 First Team, Second Team and
@@ -1894,7 +1842,9 @@ defensive honors.
 </section>
 
 
-<!-- CHAMPIONS -->
+<!-- =========================
+     CHAMPIONS
+========================= -->
 
 <section id="champions">
 
@@ -1915,21 +1865,10 @@ The official history of KBF champions.
 
 <tr>
 
-<th>
-SEASON
-</th>
-
-<th>
-CHAMPION
-</th>
-
-<th>
-RUNNER-UP
-</th>
-
-<th>
-FINALS MVP
-</th>
+<th>SEASON</th>
+<th>CHAMPION</th>
+<th>RUNNER-UP</th>
+<th>FINALS MVP</th>
 
 </tr>
 
@@ -1946,136 +1885,9 @@ FINALS MVP
 </section>
 
 
-<!-- TEAMS -->
-
-<section id="teams">
-
-<div class="section-title">
-KBF TEAMS
-</div>
-
-<div class="section-sub">
-16 teams compete in the official KBF draft league.
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="icon">
-🏀
-</div>
-
-<h3>
-16 Official Teams
-</h3>
-
-<p>
-KBF operates as a sixteen-team competitive
-draft league.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-👤
-</div>
-
-<h3>
-Team Leadership
-</h3>
-
-<p>
-Every team has one official GM responsible
-for team management.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-🔄
-</div>
-
-<h3>
-7-Round Snake Draft
-</h3>
-
-<p>
-Teams build their drafted core through
-seven rounds of snake-draft selections.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-👥
-</div>
-
-<h3>
-7 Drafted Players
-</h3>
-
-<p>
-Each team drafts seven players during
-the official draft.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-➕
-</div>
-
-<h3>
-2 Free Agents
-</h3>
-
-<p>
-Each team adds two free agents to complete
-the official ten-player roster structure.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-⏱️
-</div>
-
-<h3>
-90-Second Timer
-</h3>
-
-<p>
-Each draft selection has a ninety-second
-draft timer.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- COMPETITION STANDARDS -->
+<!-- =========================
+     COMPETITION STANDARDS
+========================= -->
 
 <section>
 
@@ -2093,9 +1905,7 @@ Professional competition starts with clear standards.
 
 <div class="card">
 
-<h3>
-16-Game Schedule
-</h3>
+<h3>16-Game Schedule</h3>
 
 <p>
 Every KBF team plays sixteen official
@@ -2107,9 +1917,7 @@ regular-season games.
 
 <div class="card">
 
-<h3>
-Top 8 Advance
-</h3>
+<h3>Top 8 Advance</h3>
 
 <p>
 The top eight teams in the standings
@@ -2121,9 +1929,7 @@ qualify for the playoffs.
 
 <div class="card">
 
-<h3>
-Championship Goal
-</h3>
+<h3>Championship Goal</h3>
 
 <p>
 Teams compete throughout the season
@@ -2138,7 +1944,9 @@ for the KBF championship.
 </section>
 
 
-<!-- REGISTER -->
+<!-- =========================
+     DISCORD / JOIN
+========================= -->
 
 <section id="register">
 
@@ -2149,7 +1957,8 @@ READY TO COMPETE?
 </h2>
 
 <p>
-Join KBF competition and compete for a championship.
+Join KBF competition, stay connected with the league,
+and compete for a championship.
 </p>
 
 <a
@@ -2158,7 +1967,7 @@ href="https://discord.gg/UYHzN8U2N"
 target="_blank"
 rel="noopener"
 >
-JOIN THE KBF DISCORD
+💬 JOIN THE KBF DISCORD
 </a>
 
 </div>
@@ -2201,7 +2010,23 @@ KBF • 16 TEAMS • 16-GAME SEASON • 8 PLAYOFF TEAMS
 
 
 /* =========================
-   RENDER UPDATE CENTER
+   BUILD STANDINGS FROM ALL 16 TEAMS
+========================= */
+
+KBF_DATA.standings = [...KBF_DATA.teams]
+.sort((a,b)=>{
+
+if(b.w !== a.w){
+return b.w-a.w;
+}
+
+return a.l-b.l;
+
+});
+
+
+/* =========================
+   UPDATE CENTER
 ========================= */
 
 function renderUpdates(){
@@ -2234,7 +2059,60 @@ ${update.text}
 
 
 /* =========================
-   RENDER STANDINGS
+   ALL 16 TEAM CARDS
+========================= */
+
+function renderTeams(){
+
+const grid=document.getElementById("teamGrid");
+
+grid.innerHTML="";
+
+KBF_DATA.teams.forEach(team=>{
+
+grid.innerHTML+=`
+
+<div class="team-card">
+
+<div class="team-number">
+TEAM ${String(team.number).padStart(2,"0")}
+</div>
+
+<h3>
+${team.name}
+</h3>
+
+<p>
+GM: <b>${team.gm}</b>
+</p>
+
+<div class="record">
+
+<span>
+${team.w}-${team.l}
+</span>
+
+<span>
+${team.pct}
+</span>
+
+<span>
+${team.streak}
+</span>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* =========================
+   STANDINGS
 ========================= */
 
 function renderStandings(){
@@ -2255,8 +2133,12 @@ ${index+1}
 
 <td>
 <b>
-${team.team}
+${team.name}
 </b>
+</td>
+
+<td>
+${team.gm}
 </td>
 
 <td>
@@ -2272,9 +2154,11 @@ ${team.pct}
 </td>
 
 <td>
+
 <span class="badge">
 ${team.streak}
 </span>
+
 </td>
 
 </tr>
@@ -2287,7 +2171,7 @@ ${team.streak}
 
 
 /* =========================
-   RENDER PLAYERS
+   PLAYERS
 ========================= */
 
 function renderPlayers(){
@@ -2338,7 +2222,7 @@ ${player.apg}
 
 
 /* =========================
-   RENDER SCHEDULE
+   SCHEDULE
 ========================= */
 
 function renderSchedule(){
@@ -2385,7 +2269,7 @@ ${game.type}
 
 
 /* =========================
-   RENDER TOURNAMENTS
+   TOURNAMENTS
 ========================= */
 
 function renderTournaments(){
@@ -2410,18 +2294,12 @@ ${tournament.name}
 
 <p>
 
-<b>
-Date:
-</b>
-
+<b>Date:</b>
 ${tournament.date}
 
 <br>
 
-<b>
-Time:
-</b>
-
+<b>Time:</b>
 ${tournament.time}
 
 <br><br>
@@ -2442,7 +2320,7 @@ ${tournament.status}
 
 
 /* =========================
-   RENDER AWARDS
+   AWARDS
 ========================= */
 
 function renderAwards(){
@@ -2475,7 +2353,7 @@ ${award.winner}
 
 
 /* =========================
-   RENDER CHAMPIONS
+   CHAMPIONS
 ========================= */
 
 function renderChampions(){
@@ -2522,6 +2400,8 @@ ${champion.mvp}
 ========================= */
 
 renderUpdates();
+
+renderTeams();
 
 renderStandings();
 
