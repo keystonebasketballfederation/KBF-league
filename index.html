@@ -379,6 +379,54 @@ color:#888;
 margin-top:7px
 }
 
+.format-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
+}
+
+.format-card{
+background:#101010;
+border:1px solid #292929;
+border-top:3px solid #e50914;
+border-radius:10px;
+padding:22px
+}
+
+.format-card .big{
+font-size:29px;
+font-weight:900;
+margin-bottom:7px
+}
+
+.format-card .label{
+color:#999;
+font-size:13px;
+font-weight:700
+}
+
+.discord-box{
+margin-top:25px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+padding:25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap
+}
+
+.discord-box h3{
+font-size:22px
+}
+
+.discord-box p{
+color:#999;
+margin-top:5px
+}
+
 footer{
 padding:35px 7%;
 border-top:1px solid #2b1010;
@@ -401,6 +449,10 @@ grid-template-columns:1fr
 }
 
 .awards{
+grid-template-columns:repeat(2,1fr)
+}
+
+.format-grid{
 grid-template-columns:repeat(2,1fr)
 }
 
@@ -447,6 +499,10 @@ text-align:center
 grid-template-columns:1fr
 }
 
+.format-grid{
+grid-template-columns:1fr
+}
+
 .stat{
 padding:22px 10px
 }
@@ -462,11 +518,7 @@ padding:22px
 <body>
 
 <!-- =====================================================
-     KBF OWNER UPDATE CENTER
-     
-     THIS IS THE ONLY PART YOU NEED TO EDIT IN THE FUTURE.
-     
-     Do NOT put passwords, private keys, or other secrets here.
+     KBF EASY UPDATE CENTER
 ===================================================== -->
 
 <script>
@@ -475,14 +527,10 @@ const KBF_DATA = {
 
 season:"Season 1",
 
-leagueStatus:"Registration / Season Setup",
+leagueStatus:"Season Setup",
 
 lastUpdate:"Update this date when you make a major league update.",
 
-
-/* =========================
-   ANNOUNCEMENTS
-========================= */
 
 updates:[
 
@@ -498,10 +546,6 @@ text:"Check official KBF announcements for roster news, schedules and game-time 
 
 ],
 
-
-/* =========================
-   STANDINGS
-========================= */
 
 standings:[
 
@@ -539,10 +583,6 @@ streak:"—"
 
 ],
 
-
-/* =========================
-   PLAYER RANKINGS
-========================= */
 
 players:[
 
@@ -585,10 +625,6 @@ apg:"—"
 ],
 
 
-/* =========================
-   SCHEDULE
-========================= */
-
 schedule:[
 
 {
@@ -622,10 +658,6 @@ type:"Overnight Tournament"
 ],
 
 
-/* =========================
-   OVERNIGHT TOURNAMENTS
-========================= */
-
 tournaments:[
 
 {
@@ -645,10 +677,6 @@ status:"Coming Soon"
 ],
 
 
-/* =========================
-   CHAMPIONS
-========================= */
-
 champions:[
 
 {
@@ -660,10 +688,6 @@ mvp:"TBD"
 
 ],
 
-
-/* =========================
-   AWARDS
-========================= */
 
 awards:[
 
@@ -729,6 +753,8 @@ winner:"TBD"
 <div class="links">
 
 <a href="#updates">UPDATE CENTER</a>
+
+<a href="#format">LEAGUE FORMAT</a>
 
 <a href="#standings">STANDINGS</a>
 
@@ -1009,8 +1035,8 @@ playoffs, player development and championships.
 
 <div class="buttons">
 
-<a class="btn" href="#register">
-JOIN THE LEAGUE
+<a class="btn" href="#format">
+VIEW LEAGUE FORMAT
 </a>
 
 <a class="btn secondary" href="#league">
@@ -1031,24 +1057,11 @@ EXPLORE KBF
 <div class="stat">
 
 <strong>
-2K
+16
 </strong>
 
 <small>
-COMPETITIVE PLAY
-</small>
-
-</div>
-
-
-<div class="stat">
-
-<strong id="seasonStat">
-S1
-</strong>
-
-<small>
-CURRENT SEASON
+TEAMS
 </small>
 
 </div>
@@ -1057,11 +1070,11 @@ CURRENT SEASON
 <div class="stat">
 
 <strong>
-24/7
+16
 </strong>
 
 <small>
-COMMUNITY
+GAME SEASON
 </small>
 
 </div>
@@ -1070,16 +1083,156 @@ COMMUNITY
 <div class="stat">
 
 <strong>
-∞
+8
 </strong>
 
 <small>
-OPPORTUNITIES
+PLAYOFF TEAMS
+</small>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+7
+</strong>
+
+<small>
+ROUND SNAKE DRAFT
 </small>
 
 </div>
 
 </div>
+
+
+<!-- =========================
+     LEAGUE FORMAT
+========================= -->
+
+<section id="format">
+
+<div class="section-title">
+KBF LEAGUE FORMAT
+</div>
+
+<div class="section-sub">
+The official structure for the KBF draft league.
+</div>
+
+
+<div class="format-grid">
+
+
+<div class="format-card">
+
+<div class="big">
+🏀 16
+</div>
+
+<div class="label">
+TEAMS
+</div>
+
+</div>
+
+
+<div class="format-card">
+
+<div class="big">
+📅 16
+</div>
+
+<div class="label">
+GAME SEASON
+</div>
+
+</div>
+
+
+<div class="format-card">
+
+<div class="big">
+🏆 8
+</div>
+
+<div class="label">
+PLAYOFF TEAMS
+</div>
+
+</div>
+
+
+<div class="format-card">
+
+<div class="big">
+🔄 7
+</div>
+
+<div class="label">
+ROUND SNAKE DRAFT
+</div>
+
+</div>
+
+
+<div class="format-card">
+
+<div class="big">
+👤 1 + 7 + 2
+</div>
+
+<div class="label">
+1 GM + 7 DRAFTED + 2 FA
+</div>
+
+</div>
+
+
+<div class="format-card">
+
+<div class="big">
+⏱️ 90
+</div>
+
+<div class="label">
+SECOND DRAFT TIMER
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="discord-box">
+
+<div>
+
+<h3>
+💬 JOIN THE KBF DISCORD
+</h3>
+
+<p>
+Official KBF communication, announcements and league community.
+</p>
+
+</div>
+
+<a
+class="btn"
+href="https://discord.gg/UYHzN8U2N"
+target="_blank"
+rel="noopener"
+>
+JOIN DISCORD
+</a>
+
+</div>
+
+</section>
 
 
 <!-- LEAGUE -->
@@ -1105,12 +1258,66 @@ A complete competitive structure for KBF players and teams.
 </div>
 
 <h3>
-Draft League
+16-Team Draft League
 </h3>
 
 <p>
-Organized player competition, evaluations,
-team selection and league opportunities.
+Sixteen teams compete throughout the official
+KBF season.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🔄
+</div>
+
+<h3>
+Snake Draft
+</h3>
+
+<p>
+Teams use a seven-round snake draft
+with a 90-second timer per selection.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+👤
+</div>
+
+<h3>
+Roster Format
+</h3>
+
+<p>
+Each team consists of 1 GM,
+7 drafted players and 2 free agents.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📅
+</div>
+
+<h3>
+16-Game Season
+</h3>
+
+<p>
+Every team plays a sixteen-game
+regular season.
 </p>
 
 </div>
@@ -1123,12 +1330,12 @@ team selection and league opportunities.
 </div>
 
 <h3>
-Regular Season
+8-Team Playoffs
 </h3>
 
 <p>
-Official league games, standings,
-statistics, matchups and playoff races.
+The top eight teams advance
+to the KBF playoff bracket.
 </p>
 
 </div>
@@ -1141,66 +1348,12 @@ statistics, matchups and playoff races.
 </div>
 
 <h3>
-Evening Regular Season
+Evening & Overnight Events
 </h3>
 
 <p>
-A dedicated evening game window for
-players competing during later hours.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-🔥
-</div>
-
-<h3>
-Competitive Events
-</h3>
-
-<p>
-Special events and competitive runs
-throughout the season.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-🚀
-</div>
-
-<h3>
-Player Development
-</h3>
-
-<p>
-Build your reputation, improve your game
-and establish yourself inside KBF.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-🎥
-</div>
-
-<h3>
-Streams & Highlights
-</h3>
-
-<p>
-Featured games, major matchups and
-important KBF moments.
+Additional competition is available
+through evening games and overnight tournaments.
 </p>
 
 </div>
@@ -1208,10 +1361,9 @@ important KBF moments.
 
 </div>
 
-</section>
-
-
-<!-- STANDINGS -->
+</section><!-- =========================
+     STANDINGS
+========================= -->
 
 <section id="standings">
 
@@ -1411,7 +1563,7 @@ PLAYOFFS CENTER
 </div>
 
 <div class="section-sub">
-The road to the KBF championship.
+The top 8 teams advance to the KBF championship bracket.
 </div>
 
 
@@ -1429,7 +1581,7 @@ Quarterfinals
 
 <div>
 <span>
-TBD
+#1 TBD
 </span>
 
 <b>
@@ -1440,7 +1592,7 @@ TBD
 
 <div>
 <span>
-TBD
+#8 TBD
 </span>
 
 <b>
@@ -1456,7 +1608,7 @@ TBD
 
 <div>
 <span>
-TBD
+#4 TBD
 </span>
 
 <b>
@@ -1467,7 +1619,70 @@ TBD
 
 <div>
 <span>
-TBD
+#5 TBD
+</span>
+
+<b>
+—
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<h3>
+Quarterfinals
+</h3>
+
+
+<div class="match">
+
+<div>
+<span>
+#2 TBD
+</span>
+
+<b>
+—
+</b>
+
+</div>
+
+<div>
+<span>
+#7 TBD
+</span>
+
+<b>
+—
+</b>
+
+</div>
+
+</div>
+
+
+<div class="match">
+
+<div>
+<span>
+#3 TBD
+</span>
+
+<b>
+—
+</b>
+
+</div>
+
+<div>
+<span>
+#6 TBD
 </span>
 
 <b>
@@ -1492,7 +1707,7 @@ Semifinals
 
 <div>
 <span>
-TBD
+Winner QF1
 </span>
 
 <b>
@@ -1503,7 +1718,7 @@ TBD
 
 <div>
 <span>
-TBD
+Winner QF2
 </span>
 
 <b>
@@ -1519,7 +1734,7 @@ TBD
 
 <div>
 <span>
-TBD
+Winner QF3
 </span>
 
 <b>
@@ -1530,43 +1745,7 @@ TBD
 
 <div>
 <span>
-TBD
-</span>
-
-<b>
-—
-</b>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="round">
-
-<h3>
-Conference / Final Four
-</h3>
-
-
-<div class="match">
-
-<div>
-<span>
-TBD
-</span>
-
-<b>
-—
-</b>
-
-</div>
-
-<div>
-<span>
-TBD
+Winner QF4
 </span>
 
 <b>
@@ -1769,14 +1948,14 @@ FINALS MVP
 
 <!-- TEAMS -->
 
-<section>
+<section id="teams">
 
 <div class="section-title">
-TEAMS & ROSTERS
+KBF TEAMS
 </div>
 
 <div class="section-sub">
-Team registration, rosters and competition information.
+16 teams compete in the official KBF draft league.
 </div>
 
 
@@ -1790,11 +1969,48 @@ Team registration, rosters and competition information.
 </div>
 
 <h3>
-Team Registration
+16 Official Teams
 </h3>
 
 <p>
-Teams can register for KBF competition.
+KBF operates as a sixteen-team competitive
+draft league.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+👤
+</div>
+
+<h3>
+Team Leadership
+</h3>
+
+<p>
+Every team has one official GM responsible
+for team management.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🔄
+</div>
+
+<h3>
+7-Round Snake Draft
+</h3>
+
+<p>
+Teams build their drafted core through
+seven rounds of snake-draft selections.
 </p>
 
 </div>
@@ -1807,11 +2023,12 @@ Teams can register for KBF competition.
 </div>
 
 <h3>
-Rosters
+7 Drafted Players
 </h3>
 
 <p>
-Track active players and official rosters.
+Each team drafts seven players during
+the official draft.
 </p>
 
 </div>
@@ -1820,15 +2037,16 @@ Track active players and official rosters.
 <div class="card">
 
 <div class="icon">
-🏆
+➕
 </div>
 
 <h3>
-Matchups
+2 Free Agents
 </h3>
 
 <p>
-Follow scheduled games and standings races.
+Each team adds two free agents to complete
+the official ten-player roster structure.
 </p>
 
 </div>
@@ -1837,49 +2055,16 @@ Follow scheduled games and standings races.
 <div class="card">
 
 <div class="icon">
-🔒
+⏱️
 </div>
 
 <h3>
-Locked Rosters
+90-Second Timer
 </h3>
 
 <p>
-Official roster information after teams are finalized.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📄
-</div>
-
-<h3>
-Box Scores
-</h3>
-
-<p>
-Post final scores and player statistics.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📈
-</div>
-
-<h3>
-Statistics
-</h3>
-
-<p>
-Track player and team performance.
+Each draft selection has a ninety-second
+draft timer.
 </p>
 
 </div>
@@ -1890,7 +2075,7 @@ Track player and team performance.
 </section>
 
 
-<!-- RULES -->
+<!-- COMPETITION STANDARDS -->
 
 <section>
 
@@ -1909,12 +2094,12 @@ Professional competition starts with clear standards.
 <div class="card">
 
 <h3>
-League Rules
+16-Game Schedule
 </h3>
 
 <p>
-All participants are expected to follow
-official KBF rules.
+Every KBF team plays sixteen official
+regular-season games.
 </p>
 
 </div>
@@ -1923,12 +2108,12 @@ official KBF rules.
 <div class="card">
 
 <h3>
-Fair Play
+Top 8 Advance
 </h3>
 
 <p>
-Respect opponents, staff and the
-integrity of every matchup.
+The top eight teams in the standings
+qualify for the playoffs.
 </p>
 
 </div>
@@ -1937,12 +2122,12 @@ integrity of every matchup.
 <div class="card">
 
 <h3>
-Communication
+Championship Goal
 </h3>
 
 <p>
-Stay up to date with official KBF
-announcements and schedules.
+Teams compete throughout the season
+for the KBF championship.
 </p>
 
 </div>
@@ -1966,6 +2151,15 @@ READY TO COMPETE?
 <p>
 Join KBF competition and compete for a championship.
 </p>
+
+<a
+class="btn"
+href="https://discord.gg/UYHzN8U2N"
+target="_blank"
+rel="noopener"
+>
+JOIN THE KBF DISCORD
+</a>
 
 </div>
 
@@ -1996,7 +2190,7 @@ Built for Competition.
 
 <div>
 
-KBF • NBA 2K COMPETITION • LEAGUE • TOURNAMENTS • PLAYOFFS
+KBF • 16 TEAMS • 16-GAME SEASON • 8 PLAYOFF TEAMS
 
 </div>
 
@@ -2321,18 +2515,6 @@ ${champion.mvp}
 });
 
 }
-
-
-/* =========================
-   SEASON DISPLAY
-========================= */
-
-document.getElementById("seasonStat").textContent =
-KBF_DATA.season.replace(/[^0-9]/g,"")
-?
-"S"+KBF_DATA.season.replace(/[^0-9]/g,"")
-:
-"KBF";
 
 
 /* =========================
