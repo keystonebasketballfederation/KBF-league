@@ -1,387 +1,1099 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CUBA | Competitive United Basketball Association</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#050505;
-color:#f5f5f5
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#fff;
 }
 
 a{
-text-decoration:none;
-color:inherit
+    color:inherit;
+    text-decoration:none;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
+
 .nav{
-height:78px;
-background:#080808;
-border-bottom:1px solid #2a0a0a;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 6%;
-position:sticky;
-top:0;
-z-index:20
+    height:78px;
+    background:#080808;
+    border-bottom:1px solid #2b0b0d;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:12px;
-font-weight:900;
-letter-spacing:2px;
-font-size:22px
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
 .brand img{
-width:45px;
-height:45px;
-object-fit:contain
+    width:48px;
+    height:48px;
+    object-fit:contain;
 }
 
 .brand span{
-color:#e50914
+    color:#e50914;
 }
 
 .links{
-display:flex;
-gap:28px;
-font-size:13px;
-font-weight:800;
-color:#c9c9c9
+    display:flex;
+    gap:22px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.links a{
+    color:#aaa;
 }
 
 .links a:hover{
-color:#e50914
+    color:#e50914;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero{
-min-height:700px;
-display:flex;
-align-items:center;
-padding:80px 7%;
-position:relative;
-overflow:hidden;
-background:
-radial-gradient(circle at 72% 42%,rgba(229,9,20,.24),transparent 32%),
-linear-gradient(135deg,#030303,#0b0b0b 55%,#160304)
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    padding:80px 7%;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 75% 40%,
+        rgba(229,9,20,.28),
+        transparent 32%
+    ),
+    linear-gradient(
+        135deg,
+        #020202,
+        #0b0b0b 60%,
+        #180304
+    );
 }
 
 .hero:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.25));
-pointer-events:none
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.25)
+    );
+
+    pointer-events:none;
 }
 
-.hero-inner{
-position:relative;
-z-index:2;
-max-width:700px
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
 }
 
 .eyebrow{
-color:#e50914;
-font-weight:900;
-letter-spacing:4px;
-font-size:13px;
-margin-bottom:18px
+    color:#ff2632;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:18px;
 }
 
-h1{
-font-size:clamp(48px,8vw,90px);
-line-height:.9;
-margin-bottom:24px;
-text-transform:uppercase
+.hero h1{
+    font-size:clamp(52px,8vw,94px);
+    line-height:.88;
+    text-transform:uppercase;
+    margin-bottom:25px;
 }
 
-h1 span{
-color:#e50914
+.hero h1 span{
+    color:#e50914;
 }
 
 .hero p{
-max-width:620px;
-color:#bdbdbd;
-font-size:18px;
-line-height:1.65;
-margin-bottom:34px
+    color:#aaa;
+    font-size:17px;
+    line-height:1.7;
+    max-width:650px;
+    margin-bottom:30px;
 }
 
 .buttons{
-display:flex;
-gap:14px;
-flex-wrap:wrap
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
 }
 
 .btn{
-padding:15px 25px;
-border-radius:6px;
-font-weight:900;
-background:#d90812;
-border:1px solid #ff3038;
-box-shadow:0 0 25px rgba(217,8,18,.22)
+    display:inline-block;
+    padding:14px 23px;
+    border-radius:6px;
+    background:#e50914;
+    border:1px solid #ff3340;
+    font-size:13px;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(229,9,20,.2);
+}
+
+.btn:hover{
+    background:#ff1b27;
 }
 
 .btn.secondary{
-background:#111;
-border:1px solid #444;
-box-shadow:none
+    background:#111;
+    border-color:#444;
+    box-shadow:none;
 }
 
-.statbar{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-background:#0a0a0a;
-border-top:1px solid #321010;
-border-bottom:1px solid #321010
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:#090909;
+    border-top:1px solid #351013;
+    border-bottom:1px solid #351013;
 }
 
 .stat{
-padding:30px;
-text-align:center
+    padding:28px;
+    text-align:center;
 }
 
 .stat strong{
-font-size:31px
+    display:block;
+    font-size:30px;
 }
 
 .stat small{
-display:block;
-color:#8e8e8e;
-margin-top:6px;
-letter-spacing:1px
+    color:#777;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
+/* =========================
+   SECTIONS
+========================= */
+
 section{
-padding:82px 7%
+    padding:80px 7%;
+    scroll-margin-top:80px;
 }
 
 .section-title{
-font-size:36px;
-font-weight:900;
-text-transform:uppercase
+    font-size:36px;
+    font-weight:900;
+    text-transform:uppercase;
 }
 
 .section-title:after{
-content:"";
-display:block;
-width:55px;
-height:4px;
-background:#e50914;
-margin-top:12px
+    content:"";
+    display:block;
+    width:55px;
+    height:4px;
+    background:#e50914;
+    margin-top:12px;
 }
 
 .section-sub{
-color:#909090;
-margin:15px 0 34px
+    color:#858585;
+    margin:13px 0 30px;
 }
 
+/* =========================
+   CARDS
+========================= */
+
 .grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
 }
 
 .card{
-background:linear-gradient(145deg,#111,#090909);
-border:1px solid #2b2b2b;
-border-top:2px solid #8d0b11;
-border-radius:10px;
-padding:28px;
-transition:.2s
+    background:
+    linear-gradient(
+        145deg,
+        #121212,
+        #090909
+    );
+
+    border:1px solid #292929;
+    border-top:2px solid #8c0c12;
+
+    border-radius:10px;
+    padding:25px;
+
+    transition:.2s;
 }
 
 .card:hover{
-transform:translateY(-3px);
-border-color:#e50914
+    transform:translateY(-4px);
+    border-color:#e50914;
 }
 
 .card h3{
-margin-bottom:10px
+    margin-bottom:9px;
+    font-size:17px;
 }
 
 .card p{
-color:#999;
-line-height:1.6
+    color:#929292;
+    line-height:1.65;
+    font-size:14px;
 }
 
+.icon{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+/* =========================
+   LEAGUE FORMAT
+========================= */
+
+.format-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.format-card{
+    background:#0e0e0e;
+    border:1px solid #292929;
+    padding:23px;
+    border-radius:9px;
+}
+
+.format-card strong{
+    display:block;
+    color:#e50914;
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.format-card span{
+    color:#aaa;
+    font-size:12px;
+    font-weight:800;
+}
+
+/* =========================
+   DRAFT BOARD
+========================= */
+
+.draft-info{
+    background:#10090a;
+    border-left:3px solid #e50914;
+    padding:16px;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.draft-board{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.round{
+    background:#0c0c0c;
+    border:1px solid #292929;
+    border-radius:9px;
+    overflow:hidden;
+}
+
+.round-header{
+    background:#151515;
+    padding:13px;
+    font-size:11px;
+    font-weight:900;
+    border-bottom:1px solid #292929;
+}
+
+.pick{
+    padding:14px;
+    border-bottom:1px solid #222;
+    color:#888;
+    font-size:12px;
+}
+
+.pick:last-child{
+    border-bottom:0;
+}
+
+.pick strong{
+    display:block;
+    color:#fff;
+    margin-bottom:3px;
+}
+
+/* =========================
+   STANDINGS
+========================= */
+
+.table-container{
+    overflow-x:auto;
+    background:#0b0b0b;
+    border:1px solid #292929;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    min-width:650px;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #222;
+    font-size:13px;
+}
+
+th{
+    color:#777;
+    font-size:10px;
+    letter-spacing:1px;
+    background:#121212;
+}
+
+.team-name{
+    font-weight:900;
+}
+
+.status{
+    color:#38d477;
+    font-weight:900;
+}
+
+/* =========================
+   SCHEDULE
+========================= */
+
+.schedule{
+    display:grid;
+    gap:12px;
+}
+
+.game{
+    display:grid;
+    grid-template-columns:100px 1fr 160px;
+    align-items:center;
+
+    background:#0e0e0e;
+    border:1px solid #282828;
+    border-radius:9px;
+    padding:18px;
+}
+
+.game-date{
+    color:#e50914;
+    font-weight:900;
+}
+
+.game-matchup{
+    font-weight:900;
+}
+
+.game-matchup span{
+    display:block;
+    color:#777;
+    font-size:11px;
+    margin-top:4px;
+}
+
+.game-status{
+    text-align:right;
+    color:#777;
+    font-size:11px;
+}
+
+/* =========================
+   RULES
+========================= */
+
+.rules{
+    display:grid;
+    gap:0;
+    background:#0d0d0d;
+    border:1px solid #292929;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.rule{
+    padding:21px;
+    border-bottom:1px solid #252525;
+}
+
+.rule:last-child{
+    border-bottom:0;
+}
+
+.rule strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.rule p{
+    color:#888;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* =========================
+   PLAYER CENTER
+========================= */
+
+.player-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.player{
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:9px;
+    padding:20px;
+}
+
+.player-number{
+    color:#e50914;
+    font-size:11px;
+    font-weight:900;
+}
+
+.player h3{
+    margin:6px 0;
+}
+
+.player p{
+    color:#777;
+    font-size:12px;
+}
+
+/* =========================
+   REGISTRATION
+========================= */
+
+.registration{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.input-group.full{
+    grid-column:1/-1;
+}
+
+.input-group label{
+    color:#888;
+    font-size:10px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    width:100%;
+    background:#090909;
+    border:1px solid #303030;
+    color:#fff;
+    padding:13px;
+    border-radius:6px;
+    outline:none;
+}
+
+.input-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.metric{
+    background:#0e0e0e;
+    border:1px solid #292929;
+    border-radius:9px;
+    padding:20px;
+}
+
+.metric small{
+    color:#777;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.metric strong{
+    display:block;
+    font-size:27px;
+    margin-top:5px;
+}
+
+/* =========================
+   CTA
+========================= */
+
 .cta{
-background:linear-gradient(100deg,#180304,#0c0c0c);
-text-align:center;
-border:1px solid #4a1013;
-border-radius:14px;
-padding:58px;
-box-shadow:0 0 45px rgba(229,9,20,.08)
+    text-align:center;
+    background:
+    linear-gradient(
+        100deg,
+        #1a0305,
+        #0c0c0c
+    );
+
+    border:1px solid #4b1115;
+    border-radius:13px;
+    padding:55px 25px;
 }
 
 .cta h2{
-font-size:38px
+    font-size:38px;
 }
 
 .cta p{
-color:#999;
-margin:14px auto 25px;
-max-width:600px
+    color:#999;
+    max-width:620px;
+    margin:12px auto 25px;
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-padding:35px 7%;
-border-top:1px solid #2b1010;
-color:#707070;
-font-size:13px;
-display:flex;
-justify-content:space-between
+    padding:35px 7%;
+    border-top:1px solid #2b1010;
+    color:#666;
+    font-size:11px;
+    display:flex;
+    justify-content:space-between;
 }
 
-@media(max-width:800px){
-.links{
-display:none
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .links{
+        display:none;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .format-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .draft-board{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .player-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .admin-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-.grid{
-grid-template-columns:1fr
-}
+@media(max-width:600px){
 
-.statbar{
-grid-template-columns:repeat(2,1fr)
-}
+    .grid,
+    .format-grid,
+    .draft-board,
+    .player-grid,
+    .admin-grid,
+    .registration{
+        grid-template-columns:1fr;
+    }
 
-section{
-padding:60px 6%
-}
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
 
-.hero{
-padding:70px 6%;
-min-height:650px
-}
+    .hero{
+        padding:70px 6%;
+    }
 
-.brand img{
-width:40px;
-height:40px
-}
+    .hero h1{
+        font-size:55px;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+    .game{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    .game-status{
+        text-align:left;
+    }
+
+    footer{
+        display:block;
+    }
+
+    footer div{
+        margin-bottom:8px;
+    }
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav class="nav">
 
-<a class="brand" href="#home">
+<a href="#home" class="brand">
 <img src="kbf-logo.png" alt="CUBA Logo">
 <span>CUBA</span>
 </a>
 
 <div class="links">
-<a href="#home">HOME</a>
 <a href="#league">LEAGUE</a>
+<a href="#draft">DRAFT</a>
 <a href="#teams">TEAMS</a>
+<a href="#schedule">SCHEDULE</a>
+<a href="#standings">STANDINGS</a>
+<a href="#players">PLAYERS</a>
 <a href="#rules">RULES</a>
 <a href="#register">REGISTER</a>
 </div>
 
 </nav>
 
+
 <main id="home">
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-<div class="hero-inner">
+<div class="hero-content">
 
 <div class="eyebrow">
 COMPETITIVE UNITED BASKETBALL ASSOCIATION
 </div>
 
 <h1>
-BUILT FOR <span>COMPETITION.</span>
+BUILT FOR
+<span>COMPETITION.</span>
 </h1>
 
 <p>
-CUBA is a professional NBA 2K competitive organization built around organized competition, league play, player opportunities and a community that takes the game seriously.
+CUBA is a competitive NBA 2K draft league built around organized
+competition, player development, team building, league play and
+a championship race.
 </p>
 
 <div class="buttons">
-<a class="btn" href="#register">JOIN CUBA</a>
-<a class="btn secondary" href="#league">LEARN MORE</a>
+
+<a href="#register" class="btn">
+REGISTER TO PLAY
+</a>
+
+<a href="#draft" class="btn secondary">
+VIEW DRAFT
+</a>
+
 </div>
 
 </div>
 
 </section>
 
-<div class="statbar">
+
+<!-- =========================
+     LEAGUE STATS
+========================= -->
+
+<div class="stats">
 
 <div class="stat">
-<strong>2K</strong>
-<small>COMPETITIVE PLAY</small>
-</div>
-
-<div class="stat">
-<strong>CUBA</strong>
-<small>ORGANIZATION</small>
-</div>
-
-<div class="stat">
-<strong>24/7</strong>
-<small>COMMUNITY</small>
+<strong>16</strong>
+<small>TEAMS</small>
 </div>
 
 <div class="stat">
-<strong>∞</strong>
-<small>OPPORTUNITIES</small>
+<strong>16</strong>
+<small>GAME SEASON</small>
+</div>
+
+<div class="stat">
+<strong>8</strong>
+<small>PLAYOFF TEAMS</small>
+</div>
+
+<div class="stat">
+<strong>7</strong>
+<small>DRAFT ROUNDS</small>
 </div>
 
 </div>
+
+
+<!-- =========================
+     LEAGUE FORMAT
+========================= -->
 
 <section id="league">
 
 <div class="section-title">
-THE LEAGUE
+CUBA LEAGUE FORMAT
 </div>
 
 <div class="section-sub">
-A competitive home for players, teams and league talent.
+A structured draft league designed for serious competition.
+</div>
+
+<div class="format-grid">
+
+<div class="format-card">
+<strong>16</strong>
+<span>TEAMS</span>
+</div>
+
+<div class="format-card">
+<strong>16</strong>
+<span>REGULAR SEASON GAMES</span>
+</div>
+
+<div class="format-card">
+<strong>8</strong>
+<span>PLAYOFF TEAMS</span>
+</div>
+
+<div class="format-card">
+<strong>7</strong>
+<span>ROUND SNAKE DRAFT</span>
+</div>
+
+<div class="format-card">
+<strong>1</strong>
+<span>GM PER TEAM</span>
+</div>
+
+<div class="format-card">
+<strong>7</strong>
+<span>DRAFTED PLAYERS</span>
+</div>
+
+<div class="format-card">
+<strong>2</strong>
+<span>FREE AGENTS</span>
+</div>
+
+<div class="format-card">
+<strong>10</strong>
+<span>TOTAL ROSTER SPOTS</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section>
+
+<div class="section-title">
+HOW CUBA WORKS
+</div>
+
+<div class="section-sub">
+From player registration to the championship.
 </div>
 
 <div class="grid">
 
 <div class="card">
-<h3>Draft League</h3>
+<div class="icon">📝</div>
+<h3>1. REGISTER</h3>
 <p>
-Players compete through organized games, evaluations and league events for opportunities to be selected by teams.
+Players submit their information and enter the official CUBA
+player pool.
 </p>
 </div>
 
 <div class="card">
-<h3>Competitive Events</h3>
+<div class="icon">🎯</div>
+<h3>2. GET EVALUATED</h3>
 <p>
-Stay active through scheduled league games, special events and competitive runs throughout the season.
+League staff and GMs evaluate available players before the
+official draft.
 </p>
 </div>
 
 <div class="card">
-<h3>Player Development</h3>
+<div class="icon">🏀</div>
+<h3>3. GET DRAFTED</h3>
 <p>
-Build your reputation, compete against strong players and establish yourself inside the CUBA community.
+GMs select players through the official seven-round snake draft.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📅</div>
+<h3>4. PLAY</h3>
+<p>
+Teams compete throughout the 16-game regular season.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>5. CLIMB THE STANDINGS</h3>
+<p>
+Wins and losses determine the final playoff standings.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>6. WIN THE TITLE</h3>
+<p>
+The top eight teams enter the playoffs and compete for the
+CUBA championship.
 </p>
 </div>
 
 </div>
 
 </section>
+
+
+<!-- =========================
+     DRAFT CENTER
+========================= -->
+
+<section id="draft">
+
+<div class="section-title">
+DRAFT CENTER
+</div>
+
+<div class="section-sub">
+Seven rounds. Snake format. Every pick matters.
+</div>
+
+<div class="draft-info">
+
+<strong>OFFICIAL DRAFT FORMAT:</strong>
+
+16 Teams • 7 Rounds • Snake Draft •
+1 GM + 7 Drafted Players + 2 Free Agents
+
+<br><br>
+
+The draft order reverses after every round.
+
+</div>
+
+
+<div class="draft-board">
+
+<div class="round">
+
+<div class="round-header">
+ROUND 1
+</div>
+
+<div class="pick">
+<strong>Pick 01 — Team 01</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 02 — Team 02</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 03 — Team 03</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 04 — Team 04</strong>
+Available
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-header">
+ROUND 2 — REVERSE
+</div>
+
+<div class="pick">
+<strong>Pick 32 — Team 01</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 31 — Team 02</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 30 — Team 03</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 29 — Team 04</strong>
+Available
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-header">
+ROUND 3
+</div>
+
+<div class="pick">
+<strong>Pick 33 — Team 01</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 34 — Team 02</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 35 — Team 03</strong>
+Available
+</div>
+
+<div class="pick">
+<strong>Pick 36 — Team 04</strong>
+Available
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-header">
+ROUNDS 4–7
+</div>
+
+<div class="pick">
+<strong>ROUND 4</strong>
+Snake order continues
+</div>
+
+<div class="pick">
+<strong>ROUND 5</strong>
+Snake order continues
+</div>
+
+<div class="pick">
+<strong>ROUND 6</strong>
+Snake order continues
+</div>
+
+<div class="pick">
+<strong>ROUND 7</strong>
+Final draft round
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TEAMS
+========================= -->
 
 <section id="teams">
 
@@ -390,66 +1102,319 @@ TEAMS & ROSTERS
 </div>
 
 <div class="section-sub">
-Organized teams. Serious competition. One organization.
+Every franchise is built through the draft and free agency.
 </div>
 
 <div class="grid">
 
 <div class="card">
-<h3>Team Registration</h3>
+<div class="icon">👑</div>
+<h3>GENERAL MANAGER</h3>
 <p>
-Teams can register for league competition and manage their roster through the official CUBA community.
+Each team has one GM responsible for managing the franchise,
+making draft selections and building the roster.
 </p>
 </div>
 
 <div class="card">
-<h3>Player Rankings</h3>
+<div class="icon">🏀</div>
+<h3>7 DRAFTED PLAYERS</h3>
 <p>
-League performance and evaluations can be used to establish player rankings and tiers.
+Each team receives seven player selections through the official
+seven-round draft.
 </p>
 </div>
 
 <div class="card">
-<h3>Matchups</h3>
+<div class="icon">⚡</div>
+<h3>2 FREE AGENTS</h3>
 <p>
-Follow scheduled matchups and compete for your team's place in the league standings.
+Teams receive two additional free-agent roster spots after
+the draft.
 </p>
 </div>
 
 </div>
 
 </section>
+
+
+<!-- =========================
+     SCHEDULE
+========================= -->
+
+<section id="schedule">
+
+<div class="section-title">
+LEAGUE SCHEDULE
+</div>
+
+<div class="section-sub">
+Official league phases and competition timeline.
+</div>
+
+<div class="schedule">
+
+<div class="game">
+<div class="game-date">PHASE 01</div>
+<div class="game-matchup">
+PLAYER REGISTRATION
+<span>Players enter the official CUBA player pool.</span>
+</div>
+<div class="game-status">UPCOMING</div>
+</div>
+
+<div class="game">
+<div class="game-date">PHASE 02</div>
+<div class="game-matchup">
+GM SELECTION
+<span>Approved GMs receive their teams.</span>
+</div>
+<div class="game-status">UPCOMING</div>
+</div>
+
+<div class="game">
+<div class="game-date">PHASE 03</div>
+<div class="game-matchup">
+DRAFT NIGHT
+<span>Seven-round official snake draft.</span>
+</div>
+<div class="game-status">UPCOMING</div>
+</div>
+
+<div class="game">
+<div class="game-date">PHASE 04</div>
+<div class="game-matchup">
+REGULAR SEASON
+<span>16 games per team.</span>
+</div>
+<div class="game-status">UPCOMING</div>
+</div>
+
+<div class="game">
+<div class="game-date">PHASE 05</div>
+<div class="game-matchup">
+PLAYOFFS
+<span>Top eight teams compete for the championship.</span>
+</div>
+<div class="game-status">UPCOMING</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STANDINGS
+========================= -->
+
+<section id="standings">
+
+<div class="section-title">
+STANDINGS
+</div>
+
+<div class="section-sub">
+Official CUBA league standings.
+</div>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>#</th>
+<th>TEAM</th>
+<th>W</th>
+<th>L</th>
+<th>WIN %</th>
+<th>STATUS</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>01</td>
+<td class="team-name">TEAM 01</td>
+<td>0</td>
+<td>0</td>
+<td>.000</td>
+<td class="status">ACTIVE</td>
+</tr>
+
+<tr>
+<td>02</td>
+<td class="team-name">TEAM 02</td>
+<td>0</td>
+<td>0</td>
+<td>.000</td>
+<td class="status">ACTIVE</td>
+</tr>
+
+<tr>
+<td>03</td>
+<td class="team-name">TEAM 03</td>
+<td>0</td>
+<td>0</td>
+<td>.000</td>
+<td class="status">ACTIVE</td>
+</tr>
+
+<tr>
+<td>04</td>
+<td class="team-name">TEAM 04</td>
+<td>0</td>
+<td>0</td>
+<td>.000</td>
+<td class="status">ACTIVE</td>
+</tr>
+
+<tr>
+<td>05</td>
+<td class="team-name">TEAM 05</td>
+<td>0</td>
+<td>0</td>
+<td>.000</td>
+<td class="status">ACTIVE</td>
+</tr>
+
+<tr>
+<td>06–16</td>
+<td class="team-name">CUBA FRANCHISES</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>SETUP</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PLAYER CENTER
+========================= -->
+
+<section id="players">
+
+<div class="section-title">
+PLAYER CENTER
+</div>
+
+<div class="section-sub">
+Track the players competing throughout CUBA.
+</div>
+
+<div class="player-grid">
+
+<div class="player">
+<div class="player-number">PLAYER 001</div>
+<h3>PLAYER POOL</h3>
+<p>Registered CUBA players awaiting draft selection.</p>
+</div>
+
+<div class="player">
+<div class="player-number">PLAYER 002</div>
+<h3>PLAYER PROFILES</h3>
+<p>Gamertag, position, team and league statistics.</p>
+</div>
+
+<div class="player">
+<div class="player-number">PLAYER 003</div>
+<h3>LEAGUE LEADERS</h3>
+<p>Top performers across approved league statistics.</p>
+</div>
+
+<div class="player">
+<div class="player-number">PLAYER 004</div>
+<h3>RANKINGS</h3>
+<p>Competitive player rankings and performance tracking.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RULES
+========================= -->
 
 <section id="rules">
 
 <div class="section-title">
-COMPETITION
+OFFICIAL RULES
 </div>
 
 <div class="section-sub">
-Professional structure starts with clear standards.
+CUBA is built around organized and fair competition.
 </div>
 
-<div class="grid">
+<div class="rules">
 
-<div class="card">
-<h3>League Rules</h3>
+<div class="rule">
+<strong>01 — PLAYER ELIGIBILITY</strong>
 <p>
-All participants are expected to follow the official CUBA rules and competitive standards.
+All players must complete the official CUBA registration process
+before entering the player pool.
 </p>
 </div>
 
-<div class="card">
-<h3>Fair Play</h3>
+<div class="rule">
+<strong>02 — DRAFT INTEGRITY</strong>
 <p>
-Respect opponents, organization staff and the integrity of every scheduled matchup.
+All draft selections must follow the official draft order and
+published league deadlines.
 </p>
 </div>
 
-<div class="card">
-<h3>Stay Locked In</h3>
+<div class="rule">
+<strong>03 — GAME COMPLETION</strong>
 <p>
-Keep up with announcements, schedules, roster updates and league deadlines through CUBA.
+Teams are responsible for completing scheduled games within the
+official league schedule.
+</p>
+</div>
+
+<div class="rule">
+<strong>04 — SPORTSMANSHIP</strong>
+<p>
+Players and GMs must respect opponents, teammates, league staff
+and the integrity of the competition.
+</p>
+</div>
+
+<div class="rule">
+<strong>05 — ROSTER MOVES</strong>
+<p>
+Free agents, replacements and roster changes must follow the
+official CUBA approval process.
+</p>
+</div>
+
+<div class="rule">
+<strong>06 — PLAYOFF QUALIFICATION</strong>
+<p>
+The top eight teams in the final regular-season standings qualify
+for the CUBA postseason.
+</p>
+</div>
+
+<div class="rule">
+<strong>07 — ADMINISTRATION</strong>
+<p>
+CUBA league administration has final authority regarding official
+league rulings, disputes and competitive decisions.
 </p>
 </div>
 
@@ -457,7 +1422,208 @@ Keep up with announcements, schedules, roster updates and league deadlines throu
 
 </section>
 
+
+<!-- =========================
+     REGISTRATION
+========================= -->
+
 <section id="register">
+
+<div class="section-title">
+JOIN CUBA
+</div>
+
+<div class="section-sub">
+Enter the player pool or apply to become a General Manager.
+</div>
+
+<div class="registration">
+
+<div class="input-group">
+
+<label>Gamertag</label>
+
+<input
+type="text"
+placeholder="Enter your gamertag"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Discord</label>
+
+<input
+type="text"
+placeholder="Discord username"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Position</label>
+
+<select>
+
+<option>Select Position</option>
+<option>PG</option>
+<option>SG</option>
+<option>SF</option>
+<option>PF</option>
+<option>C</option>
+<option>Lock</option>
+<option>Utility</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Application</label>
+
+<select>
+
+<option>Player Registration</option>
+<option>GM Application</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group full">
+
+<label>Competitive Experience</label>
+
+<textarea
+placeholder="Tell CUBA about your experience, position, availability and competitive background."
+></textarea>
+
+</div>
+
+
+<div class="input-group full">
+
+<button
+class="btn"
+type="button"
+onclick="alert('Your CUBA registration form is ready. Connect this button to your Discord, Formspree, Firebase, Supabase, or other backend to receive applications.')"
+>
+
+SUBMIT APPLICATION
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ADMIN SYSTEM
+========================= -->
+
+<section>
+
+<div class="section-title">
+LEAGUE OPERATIONS
+</div>
+
+<div class="section-sub">
+The foundation for the official CUBA administration system.
+</div>
+
+<div class="admin-grid">
+
+<div class="metric">
+<small>TEAMS</small>
+<strong>16</strong>
+</div>
+
+<div class="metric">
+<small>PLAYERS PER SEASON</small>
+<strong>160</strong>
+</div>
+
+<div class="metric">
+<small>GAMES PER TEAM</small>
+<strong>16</strong>
+</div>
+
+<div class="metric">
+<small>PLAYOFF TEAMS</small>
+<strong>8</strong>
+</div>
+
+</div>
+
+
+<div class="grid" style="margin-top:18px">
+
+<div class="card">
+<h3>Draft Management</h3>
+<p>
+Manage draft order, record picks and maintain the official
+draft board.
+</p>
+</div>
+
+<div class="card">
+<h3>Game Management</h3>
+<p>
+Enter game results, update records and maintain the standings.
+</p>
+</div>
+
+<div class="card">
+<h3>Roster Management</h3>
+<p>
+Manage player assignments, free agents, replacements and
+approved roster changes.
+</p>
+</div>
+
+<div class="card">
+<h3>Dispute Management</h3>
+<p>
+Review reported issues and maintain official league decisions.
+</p>
+</div>
+
+<div class="card">
+<h3>Announcements</h3>
+<p>
+Publish league news, deadlines, schedule updates and important
+CUBA announcements.
+</p>
+</div>
+
+<div class="card">
+<h3>Season Management</h3>
+<p>
+Open and close seasons, manage playoff qualification and crown
+the official CUBA champion.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+
+<section>
 
 <div class="cta">
 
@@ -466,11 +1632,12 @@ READY TO COMPETE?
 </h2>
 
 <p>
-Join the CUBA community and get involved with the next league cycle.
+Get drafted. Build your reputation. Compete through the regular
+season. Fight for the championship.
 </p>
 
-<a class="btn" href="#">
-REGISTER / JOIN DISCORD
+<a href="#register" class="btn">
+ENTER THE CUBA DRAFT POOL
 </a>
 
 </div>
@@ -479,15 +1646,20 @@ REGISTER / JOIN DISCORD
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<span>
-© 2026 Competitive United Basketball Association
-</span>
+<div>
+© 2026 <strong>Competitive United Basketball Association</strong>
+</div>
 
-<span>
-CUBA • NBA 2K COMPETITION
-</span>
+<div>
+CUBA • NBA 2K DRAFT LEAGUE
+</div>
 
 </footer>
 
